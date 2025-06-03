@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Um joguinho do coração 💘</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', sans-serif;
+      background: url('https://i.imgur.com/dRzj6xg.gif');
+      background-size: cover;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255, 240, 245, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .question {
+      display: none;
+    }
+    .question.active {
+      display: block;
+    }
+    button {
+      background-color: #ff99cc;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background-color: #ff66b2;
+    }
+    #final {
+      display: none;
+    }
+    h1, h2 {
+      color: #cc3366;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.dropbox.com/scl/fi/9vagp9eopzx0muhsfzvay/Luan-Santana-Tudo-Que-Voc-Quiser.mp3?rlkey=66p42s4xv4tc8cqjw3g19d6nq&raw=1" type="audio/mpeg">
+    Seu navegador não suporta áudio :(
+  </audio>
+
+  <div class="container">
+    <h1>Pra minha linda 💖</h1>
+    <div id="quiz">
+      <div class="question active">
+        <h2>1. Qual foi o primeiro tema de RPG nosso?</h2>
+        <button onclick="nextQuestion()">Deuses opostos que se amam</button>
+        <button onclick="nextQuestion()">Pessoas presas em uma cidade, que despertam Poderes</button>
+        <button onclick="nextQuestion()">Príncipe do Reino dos humanos e criatura mítica</button>
+      </div>
+
+      <div class="question">
+        <h2>2. Qual o apelido que você já me deu que eu mais gosto?</h2>
+        <button onclick="nextQuestion()">Meu gatinho</button>
+        <button onclick="nextQuestion()">Chuchu</button>
+        <button onclick="nextQuestion()">Qualquer apelido que você me der</button>
+      </div>
+
+      <div class="question">
+        <h2>3. Quais são as características em você que eu mais amo?</h2>
+        <button onclick="nextQuestion()">Rosto, sorriso</button>
+        <button onclick="nextQuestion()">Corpo</button>
+        <button onclick="nextQuestion()">Personalidade</button>
+        <button onclick="nextQuestion()">Obviamente tudo em você</button>
+      </div>
+
+      <div class="question">
+        <h2>4. Se pudesse fazer algo pra mim agora o que faria?</h2>
+        <button onclick="nextQuestion()">Me abraçaria</button>
+        <button onclick="nextQuestion()">Me beijaria</button>
+        <button onclick="nextQuestion()">Me daria um soco</button>
+        <button onclick="nextQuestion()">Deixaria eu te morder</button>
+      </div>
+
+      <div class="question">
+        <h2>5. Qual foi o nosso melhor momento?</h2>
+        <button onclick="nextQuestion()">Nossos RPG</button>
+        <button onclick="nextQuestion()">Nossas calls</button>
+        <button onclick="nextQuestion()">Nossas conversas aleatórias</button>
+        <button onclick="nextQuestion()">Tudo isso e mais um pouco</button>
+      </div>
+
+      <div class="question">
+        <h2>6. Última pergunta... ou talvez não 😏</h2>
+        <button onclick="showFinal()">Me mostra o que é de verdade agora 💘</button>
+      </div>
+    </div>
+
+    <div id="final">
+      <h2>Mensagem final 💬</h2>
+      <p style="font-size: 18px;">
+        Eu não sei quais as respostas que você colocou. Mas sei que no fim, não importa muito. Por que não existe resposta errada (só na primeira).<br><br>
+        Eu amo tudo em você, até seus defeitos. Porque amar é aceitar que a pessoa não é perfeita. Amar é sequer ter palavras pra descrever o quanto eu te amo.<br><br>
+        Mas eu posso fazer o maior ato de coragem. Que é pedir você, para passar todos os próximos anos da sua vida comigo. Nos momentos difíceis e fáceis, bons e ruins. Longe ou perto.<br><br>
+        A minha maior prova de amor, é estar disposto a tentar a loucura que é namorar à distância por você.<br><br>
+        Então, Dhallara, minha linda, minha musa...<br><br>
+        <strong>Você quer namorar comigo?</strong>
+      </p>
+      <button onclick="alert('AAAAAAHHHHHH 😭💕')">Quero</button>
+      <button onclick="alert('Eu sabiaaa! 🥹')">Com certeza</button>
+      <button onclick="alert('Sabia que você não ia me negar 😎')">Não existe a opção de negar</button>
+    </div>
+  </div>
+
+  <script>
+    let current = 0;
+    const questions = document.querySelectorAll('.question');
+
+    function nextQuestion() {
+      if (current < questions.length - 1) {
+        questions[current].classList.remove('active');
+        current++;
+        questions[current].classList.add('active');
+      }
+    }
+
+    function showFinal() {
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('final').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
